@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-400 p-4 text-white flex justify-between">
+        <div>
+            <h1 class="text-3xl font-bold"><a href="/"  class="text-white" style="text-decoration: none;">AI Blog Generator</a></h1>
+        </div>
+        <div>
+            <a href="#" class="text-white hover:underline mx-4">Welcome {{ user.username }}</a>
+            <a href="/blog-list" class="text-white hover:underline mx-4">Saved Blog Posts</a>
+            {% if user.is_authenticated %}
+                <a href="logout" class="text-white hover:underline">Logout</a>
+            {% else %}
+                <a class="btn-getstarted text-white " href="login">Login or Signup</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-10 px-4 sm:px-0">
+        <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+
+            <section>
+                <h2 class="text-xl mb-4 font-semibold">Blog Post Details</h2>
+                <div class="border border-gray-300 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">{{post.youtube_title}}</h3>
+                    <label for=""><small>{{post.created_at}}</small></label>
+                    <p class="text-gray-700">{{post.generated_content}}</p>
+                    <hr class="my-4 border-gray-300">
+                    <h4 class="text-lg font-semibold">Youtube Title</h4>
+                    <p class="text-gray-700">{{post.youtube_title}}</p>
+                    <h4 class="text-lg font-semibold mt-4">Youtube Link</h4>
+                    <a href="{{post.youtube_url}}" class="text-blue-600 hover:underline">{{post.youtube_url}}</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="text-center p-4 text-blacl mt-6">
+        Powered by <a href="#">Lordgreat</a>
+    </footer>
+</body>
+</html>

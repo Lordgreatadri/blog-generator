@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Blog Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-300 font-sans antialised">
+    <!-- Navbar -->
+    <nav class="bg-blue-400 p-4 text-white flex justify-between">
+        <div>
+            <h1 class="text-3xl font-bold">AI Blog Generator</h1>
+        </div>
+        <div>
+            <a  class="text-white hover:cusor-pointer mx-4">Welcome  {{ user.username }}</a>
+            <a href="/blog-list" class="text-white hover:underline mx-4">Saved Blog Posts</a>
+            {% if user.is_authenticated %}
+                <a href="logout" class="text-white hover:underline">Logout</a>
+            {% else %}
+                <a class="btn-getstarted text-white " href="login">Login or Signup</a>
+            {% endif %}
+        </div>
+    </nav>
+
+
+    <br>
+    <br>
+
+    <!-- Main -->
+    <div class="flex-grow container mx-auto mt-10 px-4 sm:px-0">
+        <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 flex flex-col">
+
+            <!-- Introduction section -->
+            <div class="text-center">
+                <h2 class="text-2xl font-semibold mb-4">Welcome to the AI Blog Generator</h2>
+                <br>
+                <p class="text-gray-700">
+                    Generate high-quality blog articles from YouTube videos using artificial intelligence.
+                    Simply enter the link to the YouTube video below and let the AI create the content for you!
+                </p>
+                <br>
+                <hr>
+            </div>
+
+            <br>
+
+            <!-- Youtube section -->
+            <div>
+                <h2 class="text-xl mb-4 font-semibold">Enter Youtube Video Link</h2>
+                <div class="flex space-x-4">
+                    <input id="youtubeLink" type="url" placeholder="Paste Youtube Link Here..." class="flex-grow p-2 border border-blue-400 rounded-l-md">
+                    <button id="btngenerateBlog" class="bg-blue-400 text-white px-4 py-2 rounded-r-md hover:bg-blue-500 transition-colors">Generate</button>
+                </div>
+            </div>
+
+
+            <!-- section for loading circle -->
+            <div style="display: none;" id="loading-circle" class="load"></div>
+
+
+            <!-- Generated Blog Display Section -->
+            <section class="mt-10 flex-grow">
+                <h2 class="text-xl mb-4 font-semibold blg-header" id="blg-header">Generated Blog Article</h2>
+                <div id="blogContent" class="mt-2 text-gray-700 space-y-4">
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <footer class="text-center p-4 text-blacl mt-6">
+        Powered by <a href="#">Lordgreat</a>
+    </footer>
+
+    <script src="{% static 'assets/js/custom.js'%}"></script>
+</body>
+</html>
