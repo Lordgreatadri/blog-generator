@@ -31,7 +31,7 @@ tqdm==4.66.4
 typing_extensions==4.12.2
 tzdata==2024.1
 urllib3==2.2.2
-virtualenv==20.26.3
+virtualenv==20.26.6
 virtualenvwrapper-win==1.2.7
 websockets==12.0
 wheel==0.43.0
