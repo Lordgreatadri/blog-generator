@@ -34,5 +34,5 @@ urllib3==2.5.0
 virtualenv==20.36.1
 virtualenvwrapper-win==1.2.7
 websockets==12.0
-wheel==0.43.0
+wheel==0.46.2
 yt-dlp==2024.7.16
