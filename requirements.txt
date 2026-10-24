@@ -1,5 +1,5 @@
 annotated-types==0.7.0
-anyio==4.4.0
+anyio==4.14.2
 asgiref==3.8.1
 assemblyai==0.31.0
 Brotli==1.2.0
