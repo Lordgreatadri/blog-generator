@@ -3,7 +3,7 @@ anyio==4.14.2
 asgiref==3.8.1
 assemblyai==0.31.0
 Brotli==1.2.0
-certifi==2024.7.4
+certifi==2026.10.19
 charset-normalizer==3.3.2
 colorama==0.4.6
 distlib==0.3.8
